@@ -1,3 +1,4 @@
+import 'package:best_flutter_ui_templates/arcore_app/arcore_screen.dart';
 import 'package:best_flutter_ui_templates/design_course/home_design_course.dart';
 import 'package:best_flutter_ui_templates/fitness_app/fitness_app_home_screen.dart';
 import 'package:best_flutter_ui_templates/hotel_booking/hotel_home_screen.dart';
@@ -39,6 +40,10 @@ class HomeList {
     HomeList(
       imagePath: 'assets/design_course/signup_page_image.png',
       navigateScreen: SignupPage(),
+    ),
+    HomeList(
+      imagePath: 'assets/design_course/design_course.png',
+      navigateScreen: ArCoreApp(),
     ),
   ];
 }

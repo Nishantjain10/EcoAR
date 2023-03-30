@@ -53,7 +53,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       switch (drawerIndex) {
         case DrawerIndex.HOME:
           setState(() {
-            screenView = const MyHomePage();
+            screenView = const MyHomePage(); //hotel_Screen CHANGE
           });
           break;
         case DrawerIndex.Help:

@@ -2,6 +2,7 @@ import 'package:best_flutter_ui_templates/hotel_booking/hotel_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:best_flutter_ui_templates/hotel_booking/leaderboard.dart';
 
 import 'model/hotel_list_data.dart';
 
@@ -52,11 +53,20 @@ class HotelListView extends StatelessWidget {
                       children: <Widget>[
                         Column(
                           children: <Widget>[
-                            AspectRatio(
-                              aspectRatio: 2,
-                              child: Image.asset(
-                                hotelData!.imagePath,
-                                fit: BoxFit.cover,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => LeaderBoard()),
+                                );
+                              },
+                              child: AspectRatio(
+                                aspectRatio: 2,
+                                child: Image.asset(
+                                  hotelData!.imagePath,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                             Container(
@@ -70,7 +80,7 @@ class HotelListView extends StatelessWidget {
                                     child: Container(
                                       child: Padding(
                                         padding: const EdgeInsets.only(
-                                            left: 16, top: 8, bottom: 8),
+                                            left: 8, top: 8, bottom: 8),
                                         child: Column(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
@@ -91,33 +101,21 @@ class HotelListView extends StatelessWidget {
                                               mainAxisAlignment:
                                                   MainAxisAlignment.start,
                                               children: <Widget>[
-                                                Text(
-                                                  hotelData!.subTxt,
-                                                  style: TextStyle(
+                                                Padding(
+                                                  padding: EdgeInsets.symmetric(
+                                                    vertical: 10.0,
+                                                  ),
+                                                  child: Text(
+                                                    hotelData!.subTxt,
+                                                    style: TextStyle(
                                                       fontSize: 14,
                                                       color: Colors.grey
-                                                          .withOpacity(0.8)),
+                                                          .withOpacity(0.8),
+                                                    ),
+                                                  ),
                                                 ),
                                                 const SizedBox(
                                                   width: 4,
-                                                ),
-                                                Icon(
-                                                  FontAwesomeIcons.locationDot,
-                                                  size: 12,
-                                                  color: HotelAppTheme
-                                                          .buildLightTheme()
-                                                      .primaryColor,
-                                                ),
-                                                Expanded(
-                                                  child: Text(
-                                                    '${hotelData!.dist.toStringAsFixed(1)} km to city',
-                                                    overflow:
-                                                        TextOverflow.ellipsis,
-                                                    style: TextStyle(
-                                                        fontSize: 14,
-                                                        color: Colors.grey
-                                                            .withOpacity(0.8)),
-                                                  ),
                                                 ),
                                               ],
                                             ),
@@ -185,7 +183,7 @@ class HotelListView extends StatelessWidget {
                                           CrossAxisAlignment.end,
                                       children: <Widget>[
                                         Text(
-                                          '\$${hotelData!.perNight}',
+                                          '${hotelData!.perNight}',
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
                                             fontWeight: FontWeight.w600,
@@ -193,7 +191,7 @@ class HotelListView extends StatelessWidget {
                                           ),
                                         ),
                                         Text(
-                                          '/per night',
+                                          '',
                                           style: TextStyle(
                                               fontSize: 14,
                                               color:

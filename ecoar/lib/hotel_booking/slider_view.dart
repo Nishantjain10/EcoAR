@@ -66,6 +66,7 @@ class _SliderViewState extends State<SliderView> {
               divisions: 100,
               value: distValue,
             ),
+            
           ),
         ],
       ),

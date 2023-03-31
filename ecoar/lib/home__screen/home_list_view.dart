@@ -1,22 +1,22 @@
-import 'package:best_flutter_ui_templates/hotel_booking/hotel_app_theme.dart';
+import 'package:best_flutter_ui_templates/arcore_app/arcore_screen.dart';
+import 'package:best_flutter_ui_templates/home__screen/home_app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:best_flutter_ui_templates/hotel_booking/leaderboard.dart';
 
-import 'model/hotel_list_data.dart';
 
-class HotelListView extends StatelessWidget {
-  const HotelListView(
+import 'model/home_list_data.dart';
+
+class HomeListView extends StatelessWidget {
+  const HomeListView(
       {Key? key,
-      this.hotelData,
+      this.homeData,
       this.animationController,
       this.animation,
       this.callback})
       : super(key: key);
 
   final VoidCallback? callback;
-  final HotelListData? hotelData;
+  final HomeListData? homeData;
   final AnimationController? animationController;
   final Animation<double>? animation;
 
@@ -58,19 +58,19 @@ class HotelListView extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => LeaderBoard()),
+                                      builder: (context) => ArCoreApp()),
                                 );
                               },
                               child: AspectRatio(
                                 aspectRatio: 2,
                                 child: Image.asset(
-                                  hotelData!.imagePath,
+                                  homeData!.imagePath,
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
                             Container(
-                              color: HotelAppTheme.buildLightTheme()
+                              color: HomeAppTheme.buildLightTheme()
                                   .backgroundColor,
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +88,7 @@ class HotelListView extends StatelessWidget {
                                               CrossAxisAlignment.start,
                                           children: <Widget>[
                                             Text(
-                                              hotelData!.titleTxt,
+                                              homeData!.titleTxt,
                                               textAlign: TextAlign.left,
                                               style: TextStyle(
                                                 fontWeight: FontWeight.w600,
@@ -106,7 +106,7 @@ class HotelListView extends StatelessWidget {
                                                     vertical: 10.0,
                                                   ),
                                                   child: Text(
-                                                    hotelData!.subTxt,
+                                                    homeData!.subTxt,
                                                     style: TextStyle(
                                                       fontSize: 14,
                                                       color: Colors.grey
@@ -126,7 +126,7 @@ class HotelListView extends StatelessWidget {
                                                 children: <Widget>[
                                                   RatingBar(
                                                     initialRating:
-                                                        hotelData!.rating,
+                                                        homeData!.rating,
                                                     direction: Axis.horizontal,
                                                     allowHalfRating: true,
                                                     itemCount: 5,
@@ -134,20 +134,20 @@ class HotelListView extends StatelessWidget {
                                                     ratingWidget: RatingWidget(
                                                       full: Icon(
                                                         Icons.star_rate_rounded,
-                                                        color: HotelAppTheme
+                                                        color: HomeAppTheme
                                                                 .buildLightTheme()
                                                             .primaryColor,
                                                       ),
                                                       half: Icon(
                                                         Icons.star_half_rounded,
-                                                        color: HotelAppTheme
+                                                        color: HomeAppTheme
                                                                 .buildLightTheme()
                                                             .primaryColor,
                                                       ),
                                                       empty: Icon(
                                                         Icons
                                                             .star_border_rounded,
-                                                        color: HotelAppTheme
+                                                        color: HomeAppTheme
                                                                 .buildLightTheme()
                                                             .primaryColor,
                                                       ),
@@ -159,7 +159,7 @@ class HotelListView extends StatelessWidget {
                                                     },
                                                   ),
                                                   Text(
-                                                    ' ${hotelData!.reviews} Reviews',
+                                                    ' ${homeData!.reviews} Reviews',
                                                     style: TextStyle(
                                                         fontSize: 14,
                                                         color: Colors.grey
@@ -183,7 +183,7 @@ class HotelListView extends StatelessWidget {
                                           CrossAxisAlignment.end,
                                       children: <Widget>[
                                         Text(
-                                          '${hotelData!.perNight}',
+                                          '${homeData!.perNight}',
                                           textAlign: TextAlign.left,
                                           style: TextStyle(
                                             fontWeight: FontWeight.w600,
@@ -219,7 +219,7 @@ class HotelListView extends StatelessWidget {
                                 padding: const EdgeInsets.all(8.0),
                                 child: Icon(
                                   Icons.favorite_border,
-                                  color: HotelAppTheme.buildLightTheme()
+                                  color: HomeAppTheme.buildLightTheme()
                                       .primaryColor,
                                 ),
                               ),

@@ -4,6 +4,7 @@ import 'package:best_flutter_ui_templates/custom_drawer/home_drawer.dart';
 import 'package:best_flutter_ui_templates/feedback_screen.dart';
 import 'package:best_flutter_ui_templates/help_screen.dart';
 import 'package:best_flutter_ui_templates/home_screen.dart';
+import 'package:best_flutter_ui_templates/home__screen/home_screen_secodary.dart';
 import 'package:best_flutter_ui_templates/invite_friend_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
   @override
   void initState() {
     drawerIndex = DrawerIndex.HOME;
-    screenView = const MyHomePage();
+    screenView = HomeScreen();
     super.initState();
   }
 
@@ -53,7 +54,7 @@ class _NavigationHomeScreenState extends State<NavigationHomeScreen> {
       switch (drawerIndex) {
         case DrawerIndex.HOME:
           setState(() {
-            screenView = const MyHomePage(); //hotel_Screen CHANGE
+            screenView =  HomeScreen(); //hotel_Screen CHANGE
           });
           break;
         case DrawerIndex.Help:

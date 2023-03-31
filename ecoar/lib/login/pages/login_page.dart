@@ -1,4 +1,4 @@
-import 'package:best_flutter_ui_templates/hotel_booking/hotel_home_screen.dart';
+import 'package:best_flutter_ui_templates/home__screen/home_screen_secodary.dart';
 import 'package:best_flutter_ui_templates/login/pages/signup_page.dart';
 import 'package:best_flutter_ui_templates/login/services/auth_service.dart';
 import 'package:best_flutter_ui_templates/navigation_home_screen.dart';
@@ -58,7 +58,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-            builder: (BuildContext context) => HotelHomeScreen()),
+            builder: (BuildContext context) => HomeScreen()),
       );
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context); // Close the dialog

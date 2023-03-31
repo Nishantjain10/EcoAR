@@ -1,5 +1,5 @@
-class HotelListData {
-  HotelListData({
+class HomeListData {
+  HomeListData({
     this.imagePath = '',
     this.titleTxt = '',
     this.subTxt = "",
@@ -17,9 +17,9 @@ class HotelListData {
   int reviews;
   String perNight;
 
-  static List<HotelListData> hotelList = <HotelListData>[
-    HotelListData(
-      imagePath: 'assets/hotel/hotel_1.png',
+  static List<HomeListData> homeList = <HomeListData>[
+    HomeListData(
+      imagePath: 'assets/homescreen/home_1.png',
       titleTxt: 'Eco Heroes',
       subTxt: 'Join the Eco Heroes and save the planet \nthrough sustainability',
       dist: 2.0,
@@ -27,8 +27,8 @@ class HotelListData {
       rating: 4.4,
       // perNight: "Play",
     ),
-    HotelListData(
-      imagePath: 'assets/hotel/hotel_2.png',
+    HomeListData(
+      imagePath: 'assets/homescreen/home_2.png',
       titleTxt: 'Renewable Quest',
       subTxt: 'Save the kingdom with renewable energy',
       dist: 4.0,
@@ -36,8 +36,8 @@ class HotelListData {
       rating: 4.5,
       // perNight: "Play",
     ),
-    HotelListData(
-      imagePath: 'assets/hotel/hotel_3.png',
+    HomeListData(
+      imagePath: 'assets/homescreen/home_3.png',
       titleTxt: 'Planet Protectors',
       subTxt: 'Join the mission to save the planet and \nprotect its future.',
       dist: 3.0,
@@ -45,8 +45,8 @@ class HotelListData {
       rating: 4.0,
       // perNight: "Play",
     ),
-    HotelListData(
-      imagePath: 'assets/hotel/hotel_1.png',
+    HomeListData(
+      imagePath: 'assets/homescreen/home_1.png',
       titleTxt: 'Eco Heroes',
       subTxt: 'Join the Eco Heroes and save the planet \nthrough sustainability',
       dist: 7.0,
@@ -54,8 +54,8 @@ class HotelListData {
       rating: 4.4,
       // perNight: "Play",
     ),
-    HotelListData(
-      imagePath: 'assets/hotel/hotel_2.png',
+    HomeListData(
+      imagePath: 'assets/homescreen/home_2.png',
       titleTxt: 'Renewable Quest',
       subTxt: 'Save the kingdom with renewable energy',
       dist: 2.0,

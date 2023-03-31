@@ -5,7 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class HomeDrawer extends StatefulWidget {
-   HomeDrawer(
+  HomeDrawer(
       {Key? key,
       this.screenIndex,
       this.iconAnimationController,
@@ -15,7 +15,6 @@ class HomeDrawer extends StatefulWidget {
   final AnimationController? iconAnimationController;
   final DrawerIndex? screenIndex;
   final Function(DrawerIndex)? callBackIndex;
-  
 
   @override
   _HomeDrawerState createState() => _HomeDrawerState();
@@ -28,7 +27,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
     setDrawerListArray();
     super.initState();
   }
-
 
   void setDrawerListArray() {
     drawerList = <DrawerList>[
@@ -71,9 +69,9 @@ class _HomeDrawerState extends State<HomeDrawer> {
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isLightMode = brightness == Brightness.light;
     final user = FirebaseAuth.instance.currentUser;
-if (user != null) {
-print(user.uid);
-}
+    if (user != null) {
+      print(user.uid);
+    }
     return Scaffold(
       backgroundColor: AppTheme.notWhite.withOpacity(0.5),
       body: Column(
@@ -110,7 +108,7 @@ print(user.uid);
                               shape: BoxShape.circle,
                               boxShadow: <BoxShadow>[
                                 BoxShadow(
-                                    color: AppTheme.grey.withOpacity(0.6),
+                                    color: Color.fromARGB(255, 203, 237, 67).withOpacity(0.6),
                                     offset: const Offset(2.0, 4.0),
                                     blurRadius: 8),
                               ],
@@ -126,13 +124,18 @@ print(user.uid);
                     },
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(top: 8, left: 4),
+                    padding: const EdgeInsets.only(
+                      top: 8,
+                      left: 4,
+                    ),
                     child: Text(
                       (user?.email ?? ''),
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        color: isLightMode ? AppTheme.grey : AppTheme.white,
-                        fontSize: 18,
+                        color: isLightMode
+                            ? AppTheme.grey
+                            : Color.fromARGB(255, 248, 233, 220),
+                        fontSize: 14,
                       ),
                     ),
                   ),
@@ -176,7 +179,7 @@ print(user.uid);
                 ),
                 trailing: Icon(
                   Icons.power_settings_new,
-                  color: Colors.red,
+                  color: Color.fromARGB(255, 225, 82, 72),
                 ),
                 onTap: () {
                   onTapped();
@@ -192,18 +195,14 @@ print(user.uid);
     );
   }
 
-void onTapped() async {
-  await FirebaseAuth.instance.signOut();
-  await AuthService().signOutWithGoogle();
-  Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) => SignupPage()),
-  );
-}
-
-
-
-
+  void onTapped() async {
+    await FirebaseAuth.instance.signOut();
+    await AuthService().signOutWithGoogle();
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => SignupPage()),
+    );
+  }
 
   Widget inkwell(DrawerList listData) {
     return Material(

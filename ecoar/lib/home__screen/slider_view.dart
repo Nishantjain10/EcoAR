@@ -1,6 +1,5 @@
+import 'package:best_flutter_ui_templates/home__screen/home_app_theme.dart';
 import 'package:flutter/material.dart';
-
-import 'hotel_app_theme.dart';
 
 class SliderView extends StatefulWidget {
   const SliderView({Key? key, this.onChangedistValue, this.distValue})
@@ -61,7 +60,7 @@ class _SliderViewState extends State<SliderView> {
               },
               min: 0,
               max: 100,
-              activeColor: HotelAppTheme.buildLightTheme().primaryColor,
+              activeColor: HomeAppTheme.buildLightTheme().primaryColor,
               inactiveColor: Colors.grey.withOpacity(0.4),
               divisions: 100,
               value: distValue,

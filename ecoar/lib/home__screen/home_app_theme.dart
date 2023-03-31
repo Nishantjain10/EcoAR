@@ -1,7 +1,7 @@
 import 'package:best_flutter_ui_templates/main.dart';
 import 'package:flutter/material.dart';
 
-class HotelAppTheme {
+class HomeAppTheme {
   static TextTheme _buildTextTheme(TextTheme base) {
     const String fontName = 'WorkSans';
     return base.copyWith(

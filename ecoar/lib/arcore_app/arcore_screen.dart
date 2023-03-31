@@ -80,11 +80,12 @@ class _ArCoreAppState extends State<ArCoreScreen> {
     _arcoreController.addArCoreNode(node);
   }
 
-  @override
-  void dispose() {
-    arCoreController.dispose();
-    super.dispose();
-  }
+@override
+void dispose() {
+  arCoreController.dispose();
+  super.dispose();
+}
+
 
   @override
   Widget build(BuildContext context) {

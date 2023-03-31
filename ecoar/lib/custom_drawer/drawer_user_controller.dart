@@ -96,7 +96,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
     var brightness = MediaQuery.of(context).platformBrightness;
     bool isLightMode = brightness == Brightness.light;
     return Scaffold(
-      backgroundColor: isLightMode ? AppTheme.white : AppTheme.nearlyBlack,
+      backgroundColor: isLightMode ? AppTheme.white : Color(0xFF408D4D),
       body: SingleChildScrollView(
         controller: scrollController,
         scrollDirection: Axis.horizontal,
@@ -181,7 +181,7 @@ class _DrawerUserControllerState extends State<DrawerUserController>
                                     : AnimatedIcon(
                                         color: isLightMode
                                             ? AppTheme.dark_grey
-                                            : AppTheme.white,
+                                            : AppTheme.nearlyBlack,
                                         icon: widget.animatedIconData ??
                                             AnimatedIcons.arrow_menu,
                                         progress: iconAnimationController!),
